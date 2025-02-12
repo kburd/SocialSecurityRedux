@@ -12,7 +12,7 @@ def graphPopulation():
     RETIREMENT_START_AGE = "65"
     RETIREMENT_END_AGE = "100"
 
-    population = pd.read_csv("data/population.csv", index_col="date")
+    population = pd.read_csv("../data/population.csv", index_col="date")
     population["workers"] = population.loc[:,WORK_START_AGE:WORK_END_AGE].sum(axis=1)
     population["retirees"] = population.loc[:, RETIREMENT_START_AGE:RETIREMENT_END_AGE].sum(axis=1)
     population["ratio"] = population["workers"]/population["retirees"]
@@ -52,7 +52,7 @@ def graphPopulation():
 
 def graphCpi():
 
-    cpi = pd.read_csv("data/cpi.csv", index_col="date")
+    cpi = pd.read_csv("../data/cpi.csv", index_col="date")
     INITIAL_FUND_SIZE = 1_000
     cpi["fund"] = INITIAL_FUND_SIZE * cpi["price"][0] / cpi["price"]
 
@@ -91,17 +91,17 @@ def graphMarket():
     RETIREMENT_START_AGE = "65"
     RETIREMENT_END_AGE = "100"
 
-    population = pd.read_csv("data/population.csv", index_col="date")
+    population = pd.read_csv("../data/population.csv", index_col="date")
     population = population.loc[START_DATE:END_DATE, :]
 
     population["retirees"] = population.loc[:, RETIREMENT_START_AGE:RETIREMENT_END_AGE].sum(axis=1)
     population["growth"] = population["retirees"]/population["retirees"][0]
 
-    cpi = pd.read_csv("data/cpi.csv", index_col="date")
+    cpi = pd.read_csv("../data/cpi.csv", index_col="date")
     cpi = cpi.loc[START_DATE:END_DATE, :]
     cpi["growth"] = cpi["price"]/cpi["price"][0]
 
-    market = pd.read_csv("data/sp500.csv", index_col="date")
+    market = pd.read_csv("../data/sp500.csv", index_col="date")
     market["growth"] = market["price"]/market["price"][0]    
 
     market["return"] = market["price"].pct_change().shift(-1)
