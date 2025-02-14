@@ -10,11 +10,10 @@ This project is currently a work in progress. Features and calculations may chan
 The main entry point for this project is `main.py`. Running this script from `src` will execute the core calculations and simulations. Adjust any of the values in the `Constants` section to adjust the performance of the model. 
 
 ## Accompanying Paper
-For a detailed explanation of the methodology and assumptions, refer to [ExploringMarketExposureToIncreaseSocialSecuritySolvency.pdf](ExploringMarketExposureToIncreaseSocialSecuritySolvency.pdf)
+For a detailed explanation of the methodology and assumptions, refer to [ResearchPaper.pdf](ResearchPaper.pdf)
 
 ## Contributions
 Contributions and feedback are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
 ## License
 This project is open-source under the MIT License.
-
